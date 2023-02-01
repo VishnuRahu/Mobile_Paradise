@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Uploading</title>
+</head>
+
+<body>
+	<h1>To Upload Image on mongoDB</h1>
+	<hr>
+	<div>
+		<form action="/" method="POST" enctype="multipart/form-data">
+			<div>
+				<label for="name">Phone Name</label>
+				<input type="text" id="name" placeholder="Name"
+					value="" name="name" required />
+			</div>
+			<div>
+				<label for="cmpanyname">Company Name</label>
+				<input type="text" id="companyname" name="companyname" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="frontCam">Front Camera</label>
+				<input type="text" id="frontCam" name="frontCam" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="backCam">Back Camera</label>
+				<input type="text" id="backCam" name="backCam" value="" rows="2"
+						 required >
+				
+			</div>
+			<div>
+				<label for="battery">Battery</label>
+				<input type="text" id="battery" name="battery" value="" rows="2"
+						 required>
+				</input type="text">
+			</div>
+			<div>
+				<label for="androidVersion">Android Version</label>
+				<input type="text" id="androidVersion" name="androidVersion" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="price">price</label>
+				<input type="text" id="price" name="price" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="image">Upload Image</label>
+				<input type="file" id="image"
+					name="image" value="" required />
+			</div>
+			<div>
+				<label for="internalStorage">Internal Storage</label>
+				<input type="text" id="internalStorage" name="internalStorage" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="dimension">dimension</label>
+				<input type="text" id="dimension" name="dimension" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="weight">weight</label>
+				<input type="text" id="weight" name="weight" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="build">build</label>
+				<input type="text" id="build" name="build" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="SIM">SIM</label>
+				<input type="text" id="SIM" name="SIM" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="size">size</label>
+				<input type="text" id="size" name="size" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="resolution">resolution</label>
+				<input type="text" id="resolution" name="resolution" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="protection">protection</label>
+				<input type="text" id="protection" name="protection" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="Technology">Technology</label>
+				<input type="text" id="Technology" name="Technology" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="GPU">GPU</label>
+				<input type="text" id="GPU" name="GPU" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<label for="CPU">CPU</label>
+				<input type="text" id="CPU" name="CPU" value="" rows="2"
+						 required />
+				
+			</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<hr>
+
+	<h1>Uploaded Images</h1>
+	<div>
+		<% items.forEach(function(image) { %>
+		<div>
+			<div>
+				<img src="data:image/<%=image.img.contentType%>;base64,
+					<%=image.img.data.toString('base64')%>">
+				<div>
+					<h5><%= image.name %></h5>
+					
+
+
+<p><%= image.companyName %></p>
+
+
+
+				</div>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+</body>
+
+</html>
